@@ -144,8 +144,10 @@ loadDataSet <- function() {
 	dataSet;					 
 }			
 
+#you can replace useZipFileInWorkingDirectory with downloadAndPrepareInputFolder 
+#to download the file as well
 #root is a global variable
-root <- useZipFileInWorkingDirectory();
+root <- useZipFileInWorkingDirectory(); #downloadAndPrepareInputFolder()
 
 #load, configure & combine the test & train datasets
 #THEN group them by subject and activity

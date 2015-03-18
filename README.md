@@ -1,1 +1,2 @@
 # course_prj
+To execute this project, you need to download the run_analysis.R file to your working folder.  Then you will need to download the following zip file (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) to your working folder.  Then you can execute source('run_analysis.R').
