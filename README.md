@@ -1,5 +1,8 @@
 # course_prj
 
+The following packages are required:
+    * dplyr
+    * RCurl
 
 To execute this project, you need to:
 
