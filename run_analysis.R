@@ -38,7 +38,7 @@ selectMeanStdCols <- function(df, codebook) {
 	selectVars;
 }
 
-activityLabel <- function(ids) {
+activityLabel <- function(ids, activityCodeBook) {
 	sapply(ids, function(x) {activityCodeBook[activityCodeBook$activityId==x,2]});	
 }
 
@@ -48,7 +48,7 @@ appendSubjectActivity <- function (df, activity, subject, activityCodeBook) {
 	colnames(answer)[1] <- 'subject';
 	colnames(answer)[2] <- 'activity';
 	answer <- answer %>%
-		mutate(activity = activityLabel(activity)) 
+		mutate(activity = activityLabel(activity, activityCodeBook)) 
 	answer;					
 }
 
@@ -112,4 +112,6 @@ avg_dataSet <- dataSet %>%
 
 #root is a global variable
 root <- prepareInputFolder();
-main();
+avg_dataSet <- loadDataSet() %>% 
+				group_by(subject, activity) %>% 	 
+				summarise_each(funs(mean), contains('mean'), contains('std'));
